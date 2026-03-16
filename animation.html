@@ -1,88 +1,90 @@
 <!DOCTYPE html>
-<html>
-
-
-<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Animation Project</title>
+  <title>Modern CSS Animation Project</title>
   <style>
     body {
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      background: #f0f0f0;
-      font-family: Arial, sans-serif;
-    }.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+      min-height: 100vh;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+    }
 
-/* Box 1 - Color Animation */
-.color-box {
-  width: 150px;
-  height: 150px;
-  background-color: red;
-  margin: 20px;
-  border-radius: 15px;
-  animation: colorChange 4s infinite;
-}
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
 
-@keyframes colorChange {
-  0% { background-color: red; }
-  33% { background-color: blue; }
-  66% { background-color: green; }
-  100% { background-color: red; }
-}
+    h1 {
+      color: #2c3e50;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 30px;
+    }
 
-/* Box 2 - Move Animation */
-.move-box {
-  width: 150px;
-  height: 150px;
-  background-color: orange;
-  margin: 20px;
-  border-radius: 15px;
-  animation: moveBox 3s infinite alternate;
-}
+    .box {
+      width: 120px;
+      height: 120px;
+      margin: 15px;
+      border-radius: 20px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
 
-@keyframes moveBox {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(200px); }
-}
+    /* Box 1 - Color & Pulse */
+    .color-box {
+      background-color: #ff4757;
+      animation: colorPulse 4s infinite;
+    }
 
-/* Box 3 - Rotate Animation */
-.rotate-box {
-  width: 150px;
-  height: 150px;
-  background-color: purple;
-  margin: 20px;
-  border-radius: 15px;
-  animation: rotateBox 5s linear infinite;
-}
+    @keyframes colorPulse {
+      0% { background-color: #ff4757; transform: scale(1); }
+      50% { background-color: #2e86de; transform: scale(1.1); }
+      100% { background-color: #ff4757; transform: scale(1); }
+    }
 
-@keyframes rotateBox {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
+    /* Box 2 - Float Move */
+    .move-box {
+      background-color: #ffa502;
+      animation: floatMove 3s ease-in-out infinite alternate;
+    }
 
-h1 {
-  text-align: center;
-  color: #333;
-  margin-bottom: 40px;
-}
+    @keyframes floatMove {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(-50px) rotate(10deg); }
+    }
 
+    /* Box 3 - Smooth Spin */
+    .rotate-box {
+      background-color: #8e44ad;
+      animation: smoothSpin 6s linear infinite;
+    }
+
+    @keyframes smoothSpin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    /* Hover Effects */
+    .box:hover {
+      filter: brightness(1.2);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>CSS Animation Project</h1>
-    <div class="color-box"></div>
-    <div class="move-box"></div>
-    <div class="rotate-box"></div>
+    <h1>✨ CSS Magic Shapes</h1>
+    <div class="box color-box"></div>
+    <div class="box move-box"></div>
+    <div class="box rotate-box"></div>
   </div>
 </body>
 </html>
